@@ -60,3 +60,24 @@ function generatePlayerCard() {
 }
 generateTombolaBoard();
 generatePlayerCard();
+
+function highlightCell(number) {
+  let cells = document.querySelectorAll("td");
+  cells[number - 1].classList.add("highlight");
+}
+document.getElementById("start-game").addEventListener("submit", function () {
+  extractedNumbers = [];
+  let numCards = parseInt(document.getElementById("num-cards").value);
+  document.querySelectorAll("highlight").forEach(function (cell) {
+    cell.classList.remove("highlight");
+  });
+  for (let i = 0; i < numCards; i++) {
+    generatePlayerCard();
+  }
+});
+
+const compraCartella = (e) => {
+  e.preventDefault();
+};
+const formNode = document.querySelector("form");
+formNode.onsubmit = compraCartella;

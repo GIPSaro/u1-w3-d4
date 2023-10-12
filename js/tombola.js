@@ -42,3 +42,21 @@ document.getElementById("draw-button").onclick = function () {
     highlightCell(randomNumber);
   }
 };
+function generatePlayerCard() {
+  const card = document.getElementById("player-card");
+  const numbers = [];
+
+  for (let i = 1; i <= 76; i++) {
+    numbers.push(i);
+  }
+
+  for (let i = 0; i < 24; i++) {
+    const randomIndex = Math.floor(Math.random() * numbers.length);
+    const randomNumber = numbers.splice(randomIndex, 1)[0];
+    let cell = document.createElement("td");
+    cell.textContent = randomNumber;
+    card.appendChild(cell);
+  }
+}
+generateTombolaBoard();
+generatePlayerCard();

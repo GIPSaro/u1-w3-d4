@@ -61,10 +61,6 @@ function generatePlayerCard() {
 generateTombolaBoard();
 generatePlayerCard();
 
-function highlightCell(number) {
-  let cells = document.querySelectorAll("td");
-  cells[number - 1].classList.add("highlight");
-}
 document.getElementById("start-game").addEventListener("submit", function () {
   extractedNumbers = [];
   let numCards = parseInt(document.getElementById("num-cards").value);
